@@ -1,7 +1,7 @@
 local result, reason = ""
 
 do
-	local handle, chunk = component.proxy(component.list("internet")() or error("Required internet component is missing")).request("https://raw.githubusercontent.com/IgorTimofeev/MineOS/master/Installer/Main.lua")
+	local handle, chunk = component.proxy(component.list("internet")() or error("Required internet component is missing")).request("https://raw.githubusercontent.com/Epicaaron85/epia-OS/main/installer/main.lua")
 
 	while true do
 		chunk = handle.read(math.huge)
@@ -27,3 +27,5 @@ if result then
 else
 	error(reason)	
 end
+
+-- wget -f https://raw.githubusercontent.com/Epicaaron85/epia-OS/main/installer/bios.lua /tmp/bios.lua && flash -q /tmp/bios.lua && reboot
